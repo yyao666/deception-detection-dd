@@ -11,4 +11,4 @@ This repository contains research-grade implementations of **multimodal deceptio
 - **Modular architecture:** Easy to extend or integrate with additional modalities or fusion methods.
 
 ## Dataset
-> **Important:** Because the project is still in progress, the **ROSE v2** dataset is not yet public. To run the code, please refer to the dataset placement structure included in the respective readme.
+> **Important:** Because the project is still in progress, the **ROSE v2** dataset is not yet public. 
