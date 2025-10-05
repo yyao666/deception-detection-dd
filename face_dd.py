@@ -103,9 +103,8 @@ def parse_test_csv_file(annotations_file, mode, img_dir, time_window):
     csv.to_csv('parsed_protocols/parsed_test.csv',index=None)
 
 
+##############################################################################
 
-
-################################################## copy ##############3
 class Parsed_Face_Dataset(Dataset):
     def __init__(self, annotations_file, img_dir, time_window, fps):
 
@@ -151,7 +150,7 @@ class Parsed_Face_Dataset(Dataset):
         # the sample name is required to calculate accuracy over entire video clips
         return self.annos.iloc[idx, 0].split('/')[1], face_frames, label
 
-#############3 till here ##############################################
+###############################################################################################
     
 
     
@@ -312,5 +311,6 @@ for fold in range(1,5):
         print("\n\tTrain loss = {} \t Train accuracy = {}".format(train_loss, train_acc ))
         print("\tVal loss = {} \t Val accuracy = {}".format(val_loss, val_acc ))
         best_val_acc.append(val_acc)
+
 
     print("\n\tBest Accuracy........", round(np.max(np.asarray(best_val_acc)),2))
