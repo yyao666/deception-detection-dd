@@ -46,9 +46,9 @@ class Spec_Dataset(Dataset):
         self.annos = []
         for i in range(annotations.shape[0]):
 
-            mono_or_interro = annotations.iloc[i,4] # mono, monologue, interrogation
-            ethnicity = annotations.iloc[i,1].split("_")[0] # EA, SEA, SA
-            language = annotations.iloc[i,-1] # chinese, english, English etc. CAUTION !! - language names are case sensitive
+            mono_or_interro = annotations.iloc[i,4] 
+            ethnicity = annotations.iloc[i,1].split("_")[0] 
+            language = annotations.iloc[i,-1] 
 
 
             # choose a language within an ethnic group
@@ -90,12 +90,10 @@ def af_pad_sequence(batch):
 def af_collate_fn(batch):
     spec_tensors, targets = [], []
 
-    # Gather in lists, and encode labels as indices
     for spec, label in batch:
         spec_tensors += [spec]
         targets += [label]
 
-    # Group the list of tensors into a batched tensor
     spec_tensors = af_pad_sequence(spec_tensors)
     targets = torch.stack(targets)
 
