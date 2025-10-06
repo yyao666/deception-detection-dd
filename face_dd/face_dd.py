@@ -40,6 +40,7 @@ class face_model(nn.Module):
 # This snippet creates a parsed train/test csv files where every sample has "approximately" the same duration as time_window
 # For example, it breaks a 120s video and splits into 12 x 10s videos. 
 """
+
 def parse_train_csv_file(annotations_file, mode, img_dir, time_window):
     annos = pd.read_csv(annotations_file)
     with open("parsed_protocols/parsed_train.txt","w") as f:
@@ -106,6 +107,7 @@ def parse_test_csv_file(annotations_file, mode, img_dir, time_window):
 
 
 #############################################################
+
 class Parsed_Face_Dataset(Dataset):
     def __init__(self, annotations_file, img_dir, time_window, fps):
 
@@ -156,10 +158,6 @@ class Parsed_Face_Dataset(Dataset):
 
     
 
-#############################################################################################################################
-#############################################################################################################################
-
-
 def train_one_epoch(train_data_loader,model,optimizer,loss_fn):
     epoch_loss = []
     model.train()
@@ -194,7 +192,7 @@ def train_one_epoch(train_data_loader,model,optimizer,loss_fn):
 def estimate_clip_level_labels():
     
     clip_level_names = []
-    # this adds all unique file names as a list
+    # adds all unique file names as a list
     for line in open("parsed_protocols/parsed_test.txt").readlines():
         name = line.split(",")[0].split('/')[1]
         if name not in clip_level_names: clip_level_names.append(name)
