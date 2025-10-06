@@ -1,6 +1,13 @@
 # deception-detection-dd
 
-This repository contains research-grade implementations of **multimodal deception detection** models, focusing on **audio** and **video/face** modalities. The library is designed to be modular, extensible, and suitable for cross-domain, cross-ethnic deception detection research. 
+This repository contains research-grade implementations of **multimodal deception detection** models, focusing on **audio** and **video/face** modalities. The code is designed to be modular, extensible, and suitable for cross-domain, cross-ethnic deception detection research. 
+
+This is part of my **Master’s thesis** work at Nanyang Technological University **(NTU)**, Singapore, conducted under the MSc in Communication Engineering program.
+
+🎯 Research Objective
+
+The primary objective of this research is to develop a fair and robust multimodal deception detection system that generalizes across speakers of different ethnicities and languages.
+
 
 **Key Features:**
 - **Audio-based DD:** Uses spectrogram inputs with a ResNet50 backbone.
