@@ -52,11 +52,6 @@ class multimodal_r50(nn.Module):
 ############################################################################################################################# 
 
 
-"""
-# This snippet creates a parsed train/test csv files where every sample has "approximately" the same duration as time_window
-# For example, it breaks a 120s video and splits into 12 x 10s videos. 
-"""
-
 def parse_train_csv_file(annotations_file, mode, img_dir, time_window):
     annos = pd.read_csv(annotations_file)
     with open("parsed_protocols/parsed_train.txt","w") as f:
